@@ -7,7 +7,7 @@ let list_questoins = ["1Lorem ipsum dolor sit amet, consectetur adipisicing ",
                       "3Lorem ipsum dolor sit amet, consectetur adipisicing ",
                       "4Lorem ipsum dolor sit amet, consectetur adipisicing ",
                       "5Lorem ipsum dolor sit amet, consectetur adipisicing ",
-                      "6Lorem ipsum dolor sit amet, consectetur adipisicing "]
+                      "6Lorem ipsum dolor sit amet, consectetur adipisicing ",]
 
 // tworzymy WSZYSTKIE slider_boxy (w zależności od ilości pytań) które
 // ukrywamy przez "display:none;"
@@ -51,15 +51,16 @@ function FormItem(nr, question) {
 
 
 function Page(nr1, nr2, cat_name, question_nr, info=false) {
-//                           TRANSPORT                   ENERGIA DOMU
-  this.bg_img_list =        ["media/transport.png",       "media/home_energy.png"];
-  this.img_btn_left_list =  ["media/arrow-left.png",      "media/arrow-left-white.png"];
-  this.img_btn_right_list = ["media/arrow-right.png",     "media/arrow-right-white.png"];
-  this.img_logo_list =      ["media/LOGO_DARK_BLUE.png",  "media/LOGO_WHITE.png"];
-  this.position_list =      ["auto auto auto auto",       "auto auto auto 70px"];
-  this.main_color_list =    ["#374470",                   "white"];
-  this.form_box_color_list =["rgba(255,255,255,0.8)",     "rgba(0,0,0,0.8)"];
-  this.form_item_color_list=[["rgb(55, 68, 112)","white"],["white","black"]]
+//                             TRANSPORT                       ENERGIA DOMU                     ODPADY                        JEDZENIE                          ROZRYWKA                         STYL ŻYCIA
+  this.bg_img_list =        ["media/transport.png",       "media/home_energy.png",        "media/waste.png",               "media/food.png",               "media/entertainment.png",     "media/lifestyle.png"];
+  this.img_btn_left_list =  ["media/arrow-left.png",      "media/arrow-left-white.png",   "media/arrow-left-white.png",    "media/arrow-left-white.png",   "media/arrow-left-white.png",  "media/arrow-left-white.png"];
+  this.img_btn_right_list = ["media/arrow-right.png",     "media/arrow-right-white.png",  "media/arrow-right-white.png",   "media/arrow-right-white.png",  "media/arrow-right-white.png", "media/arrow-right-white.png"];
+  this.img_logo_list =      ["media/LOGO_DARK_BLUE.png",  "media/LOGO_WHITE.png",         "media/LOGO_WHITE.png",          "media/LOGO_GREEN.png",         "media/LOGO_RED.png",          "media/LOGO_DARK_BLUE.png"];
+  this.position_list =      ["auto auto auto auto",       "auto auto auto 70px",          "auto 70px auto auto",           "auto auto auto auto",          "auto auto auto 70px",         "auto auto auto auto"];
+  this.main_color_list =    ["#374470",                   "white",                        "white",                         "rgb(60, 129, 78)",             "rgb(250, 78, 86)",            "rgb(55, 68, 112)"];
+  this.main_header_color_list = ["#374470",                   "white",                        "rgb(76, 53, 68)",               "rgb(60, 129, 78)",             "rgb(250, 78, 86)",            "rgb(226, 109, 159)"];
+  this.form_box_color_list =["rgba(255,255,255,0.8)",     "rgba(0,0,0,0.8)",              "rgba(57, 42, 67, 0.8)",         "rgba(221, 242, 243, 0.8)",     "rgba(220, 219, 182, 0.8)",    "rgba(255, 230, 241, 0.8)"];
+  this.form_item_color_list=[["rgb(55, 68, 112)","white"],["white","black"],              ["white","rgba(57, 42, 67)"],    ["rgb(60, 129, 78)","white"],   ["rgb(250, 78, 86)","white"],  ["",""]]
   this.cat_name = cat_name;
   this.question_nr = question_nr;
   this.info = info;
@@ -142,7 +143,7 @@ function Page(nr1, nr2, cat_name, question_nr, info=false) {
       cat_list[i].style.backgroundColor = "#8A8A8A";
     }
     cat_list[nr].classList.add("active");
-    cat_list[nr].style.backgroundColor = this.main_color_list[nr];
+    cat_list[nr].style.backgroundColor = this.main_header_color_list[nr];
   }
 
   this.changeBackground = function(nr) {
@@ -169,6 +170,9 @@ function Page(nr1, nr2, cat_name, question_nr, info=false) {
 
   this.changeColor = function(nr) {
     document.body.style.color = this.main_color_list[nr];
+    let form_header =document.querySelector(".form-header");
+    form_header.style.color = this.main_header_color_list[nr];
+
   }
 
   this.changeQuestionNr = function() {
@@ -206,22 +210,31 @@ function Page(nr1, nr2, cat_name, question_nr, info=false) {
 
 
 // tworzymy kolejne strony
-let p1 = new Page(0,3,
+let p1 = new Page(0,1,
   "TRANSPORT",
-  "Pytania 1-6",
+  "Pytanie 1",
   ["tytuł","Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "]);
 
-let p2 = new Page(3,4,
+let p2 = new Page(1,2,
   "ENERGIA DOMU",
-  "Pytanie 7");
+  "Pytanie 2");
 
-let p3 = new Page(4,5,
-  "ENERGIA DOMU",
-  "Pytanie 8");
+let p3 = new Page(2,3,
+  "ODPADY",
+  "Pytanie 3",
+  ["tytuł","Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "]);
 
-let p4 = new Page(5,6,
-  "ENERGIA DOMU",
-  "Pytanie 9");
+let p4 = new Page(3,4,
+  "JEDZENIE",
+  "Pytanie 4");
+
+let p5 = new Page(4,5,
+  "ROZRYWKA",
+  "Pytanie 5");
+
+let p6 = new Page(5,6,
+  "STYL ŻYCIA",
+  "Pytanie 6");
 
 
 // zaczepiamy się o przyciski
@@ -237,7 +250,8 @@ function changePage() {
   	case 2: p2.drawPage(); break;
   	case 3: p3.drawPage(); break;
   	case 4: p4.drawPage(); break;
-    case 5: console.log(answers); ;break;
+    case 5: p5.drawPage(); ;break;
+    case 6: p6.drawPage(); ;break;
   }
 }
 
@@ -251,7 +265,7 @@ function leftClick() {
 
 prawo.addEventListener("click", rightClick);
 function rightClick() {
-  if(page < 5){
+  if(page < 6){
     page++;
     changePage()
   }

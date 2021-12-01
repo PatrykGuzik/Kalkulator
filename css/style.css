@@ -74,8 +74,12 @@ body{
 
 .category-nr{
   font-weight: 300;
-  font-size: 22px;
+  font-size: 24px;
   padding-bottom: 10%;
+}
+
+.question-nr{
+  font-size: 22px;
 }
 
 /* _________GŁÓWNA TREŚĆ__________ */
@@ -89,7 +93,6 @@ body{
 .form-main-inner{
   display: inline-block;
   width: 450px;
-  min-height: 200px;
   margin-left: auto;
   margin-right: auto;
   background-color: rgba(255,255,255,0.8);
@@ -124,7 +127,6 @@ body{
   margin-left: auto;
   margin-right: auto;
   width: 90%;
-  min-height: 100px;
   background-color: rgba(255,255,255,0.8);
   border-radius: 20px;
   text-align: center;
@@ -155,12 +157,12 @@ body{
   font-weight: 800;
   padding-left: 40px;
   padding-right: 40px;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 7px;
 }
 
 .slider-value{
-  font-size: 35px;
+  font-size: 20px;
 }
 
 :root{
