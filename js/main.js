@@ -22,7 +22,7 @@ for (var i = 0; i < list_questoins.length; i++) {
 function FormItem(nr, question) {
   this.nr = nr;
   this.question = question;
-  // this.value = 3;
+  name_values = ["bardzo mało", "mało", "średnio", "dużo", "bardzo dużo"];
 
   this.drawSlider= function(slider_box) {
     // twożymy pojemnik na pytanie, wartość i slider
@@ -39,12 +39,12 @@ function FormItem(nr, question) {
     }
 
     answers[nr] = slider.value;
-    info_value.innerHTML = slider.value;
+    info_value.innerHTML = name_values[slider.value-1];
     // jeżeli ktoś zmieniwartość na sliderze aktualizujemy dane i zmieniamy wyświetlaną wartość
     slider.addEventListener("input", myFunction);
     function myFunction() {
       answers[nr] = slider.value;
-      info_value.innerHTML = slider.value;
+      info_value.innerHTML = name_values[slider.value-1];
     };
   }
 }
@@ -52,13 +52,14 @@ function FormItem(nr, question) {
 
 function Page(nr1, nr2, cat_name, question_nr, info=false) {
 //                           TRANSPORT                   ENERGIA DOMU
-  this.bg_img_list =        ["media/transport.png",     "media/home_energy.png"];
-  this.img_btn_left_list =  ["media/arrow-left.png",    "media/arrow-left-white.png"];
-  this.img_btn_right_list = ["media/arrow-right.png",   "media/arrow-right-white.png"];
-  this.img_logo_list =      ["media/LOGO_DARK_BLUE.png","media/LOGO_WHITE.png"];
-  this.position_list =      ["auto auto auto auto",     "auto auto auto 70px"];
-  this.main_color_list =    ["#374470",                 "white"];
-  this.form_box_color_list =["rgba(255,255,255,0.8)",   "rgba(0,0,0,0.8)"];
+  this.bg_img_list =        ["media/transport.png",       "media/home_energy.png"];
+  this.img_btn_left_list =  ["media/arrow-left.png",      "media/arrow-left-white.png"];
+  this.img_btn_right_list = ["media/arrow-right.png",     "media/arrow-right-white.png"];
+  this.img_logo_list =      ["media/LOGO_DARK_BLUE.png",  "media/LOGO_WHITE.png"];
+  this.position_list =      ["auto auto auto auto",       "auto auto auto 70px"];
+  this.main_color_list =    ["#374470",                   "white"];
+  this.form_box_color_list =["rgba(255,255,255,0.8)",     "rgba(0,0,0,0.8)"];
+  this.form_item_color_list=[["rgb(55, 68, 112)","white"],["white","black"]]
   this.cat_name = cat_name;
   this.question_nr = question_nr;
   this.info = info;
@@ -69,7 +70,6 @@ function Page(nr1, nr2, cat_name, question_nr, info=false) {
     this.changeFormItems();
 
 
-    //
 
     switch (this.cat_name) {
     	case "TRANSPORT":     this.changeElements(0);
@@ -102,6 +102,7 @@ function Page(nr1, nr2, cat_name, question_nr, info=false) {
     this.changeQuestionNr();
     this.changeFormBoxColor(nr);
     this.changeInfo();
+    this.changeFormItemsColor(nr);
   }
 
   this.changeFormItems = function() {
@@ -181,6 +182,10 @@ function Page(nr1, nr2, cat_name, question_nr, info=false) {
     form_color.style.backgroundColor = this.form_box_color_list[nr];
     info_color.style.backgroundColor = this.form_box_color_list[nr];
   }
+  this.changeFormItemsColor = function(nr) {
+    document.documentElement.style.setProperty('--mainSliderColor', this.form_item_color_list[nr][0]);
+    document.documentElement.style.setProperty('--wheelSliderColor', this.form_item_color_list[nr][1]);
+  }
 
   this.changeInfo = function() {
     let form_info = document.querySelector(".form-info");
@@ -211,10 +216,12 @@ let p2 = new Page(3,4,
   "Pytanie 7");
 
 let p3 = new Page(4,5,
-  "ODPADY");
+  "ENERGIA DOMU",
+  "Pytanie 8");
 
 let p4 = new Page(5,6,
-  "JEDZENIE");
+  "ENERGIA DOMU",
+  "Pytanie 9");
 
 
 // zaczepiamy się o przyciski
@@ -230,6 +237,7 @@ function changePage() {
   	case 2: p2.drawPage(); break;
   	case 3: p3.drawPage(); break;
   	case 4: p4.drawPage(); break;
+    case 5: console.log(answers); ;break;
   }
 }
 
@@ -243,7 +251,7 @@ function leftClick() {
 
 prawo.addEventListener("click", rightClick);
 function rightClick() {
-  if(page < 4){
+  if(page < 5){
     page++;
     changePage()
   }

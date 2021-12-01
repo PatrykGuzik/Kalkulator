@@ -163,6 +163,11 @@ body{
   font-size: 35px;
 }
 
+:root{
+  --mainSliderColor: rgb(55, 68, 112);
+  --wheelSliderColor: white;
+}
+
 .slider{
   -webkit-appearance:none;
   width: 250px;
@@ -170,14 +175,14 @@ body{
   margin-bottom: 30px;
   margin-top: 10px;
   border-radius: 10px;
-  background-color: rgb(55, 68, 112);
+  background-color: var(--mainSliderColor);
 }
 
 .slider::-webkit-slider-thumb{
   -webkit-appearance:none;
   width: 30px;
   height: 30px;
-  background-color: white;
-  border: 3px solid rgb(55, 68, 112);
+  background-color: var(--wheelSliderColor);
+  border: 3px solid var(--mainSliderColor);
   border-radius: 50%;
 }
