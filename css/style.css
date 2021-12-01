@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(55, 68, 112);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.parallax{
+  background-image: url(../media/transport.png);
+  background-position-x: center, center;
+  background-position-y: center, center;
+  background-size: cover;
+  background-repeat-x: repeat;
+  background-repeat-y: repeat;
+  background-attachment: fixed;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+}
+.parallax-inner{
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.container{
+  width: 100%;
+  min-height: 75vh;
+}
+
+.logo{
+  /* border: 1px solid black; */
+  display: inline-block;
+  margin-left: 20px;
+  transform: translateY(-7vh);
+}
+
+.form-box{
+  width: 600px;
+  min-height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  /* border: 1px solid black; */
+}
+/* ____________NAGŁÓWEK___________ */
+.form-header{
+  /* border: 1px solid black; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.category-name{
+  font-weight: 800;
+  font-size: 32px;
+  /* color: #374470; */
+}
+
+.category-bar .active{
+  background-color: #374470;
+}
+
+.category-bar-item{
+  display:inline-block;
+  width: 47px;
+  height: 6px;
+  background-color: #8A8A8A;
+}
+
+.category-nr{
+  font-weight: 300;
+  font-size: 22px;
+  padding-bottom: 10%;
+}
+
+/* _________GŁÓWNA TREŚĆ__________ */
+.form-main{
+  margin-top: 6%;
+  position: relative;
+  width:100%;
+  /* border: 1px solid black; */
+}
+
+.form-main-inner{
+  display: inline-block;
+  width: 450px;
+  min-height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 20px;
+}
+
+/* _____________STRZAŁKI___________ */
+.button-arrow{
+  position: absolute;
+  display: inline-block;
+  background-color: transparent;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+#btn-left{
+  transform: translate(-100%, -50%);
+}
+
+.img-btn{
+  padding: 20px;
+  transition: transform 0.2s;
+}
+.img-btn:hover{
+  transform: scale(1.2);
+}
+
+
+/* __________INFO___________ */
+.form-info{
+  margin-top: 6%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  min-height: 100px;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.info-name{
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+.info-content{
+  display: inline-block;
+  padding-bottom: 10px;
+  width: 70%;
+}
+
+
+/* _______SLIDER__________ */
+.slider_box{
+  margin-bottom: 20px;
+}
+
+.slider-question{
+  font-size: 20px;
+  font-weight: 800;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 10px;
+  margin-bottom: 7px;
+}
+
+.slider-value{
+  font-size: 35px;
+}
+
+.slider{
+  -webkit-appearance:none;
+  width: 250px;
+  height: 16px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: rgb(55, 68, 112);
+}
+
+.slider::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 3px solid rgb(55, 68, 112);
+  border-radius: 50%;
+}
