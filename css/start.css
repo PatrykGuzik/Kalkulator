@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
+  font-family: 'Montserrat', sans-serif;
+  background-color: black;
+  background-image: url(../media/Ziemia_start.png);
+  background-position-x: center, center;
+  background-position-y: center, center;
+  background-size: cover;
+  background-repeat-x: repeat;
+  background-repeat-y: repeat;
+  background-attachment: fixed;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+}
+
+a{
+  text-decoration: none;
+}
+
+.container{
+  width: 30vw;
+  min-height: 85vh;
+  padding: 20px;
+}
+
+#p1{
+  color:white;
+  font-weight: 700;
+
+}
+#p2{
+  color:white;
+}
+
+#start-btn{
+  border-radius: 20px;
+  background-color: rgb(100, 139, 203);
+  padding: 20px;
+  min-width: 40%;
+  max-width: 60%;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  text-decoration: none;
+  margin: auto;
+  color: rgb(255, 255, 255);
+  transition: transform .2s;
+
+}
+#start-btn:hover{
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.footer{
+  padding: 10px;
+  margin: auto;
+  width: 87%;
+  min-height: 140px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  text-align: center;
+}
+#footer-text{
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#footer-img{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

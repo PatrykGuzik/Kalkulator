@@ -1,0 +1,63 @@
+/* _________GŁÓWNA TREŚĆ__________ */
+.form-main{
+  margin-top: 6%;
+  position: relative;
+  width:100%;
+  /* border: 1px solid black; */
+}
+
+.form-main-inner{
+  display: inline-block;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 20px;
+}
+
+/* _____________STRZAŁKI___________ */
+.button-arrow{
+  position: absolute;
+  display: inline-block;
+  background-color: transparent;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+#btn-left{
+  transform: translate(-100%, -50%);
+}
+
+.img-btn{
+  padding: 20px;
+  transition: transform 0.2s;
+}
+.img-btn:hover{
+  transform: scale(1.2);
+}
+
+
+/* __________INFO___________ */
+.form-info{
+  margin-top: 6%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.info-name{
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+.info-content{
+  display: inline-block;
+  padding-bottom: 10px;
+  width: 70%;
+}

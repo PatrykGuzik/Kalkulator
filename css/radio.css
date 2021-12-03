@@ -1,0 +1,43 @@
+:root{
+  --mainRadioColor: rgb(55, 68, 112);
+}
+
+.radio{
+  margin: auto;
+  width: 350px;
+  height: 100px;
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 30px;
+  /* border: 1px solid black; */
+}
+
+.radio-inner{
+  width: 300px;
+  display: block;
+  padding: 6px;
+  left:0;
+}
+
+
+label > input[type="radio"] {
+  display: none;
+}
+
+label > input[type="radio"] + *::before {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.3rem;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 0.15rem;
+  border-color: var(--mainRadioColor);
+}
+
+label > input[type="radio"]:checked + *::before {
+  background: radial-gradient(var(--mainRadioColor) 0%, var(--mainRadioColor) 40%, transparent 50%, transparent);
+  border-color: var(--mainRadioColor);
+}

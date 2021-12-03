@@ -1,0 +1,33 @@
+/* ____________NAGŁÓWEK___________ */
+.form-header{
+  /* border: 1px solid black; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.category-name{
+  font-weight: 800;
+  font-size: 32px;
+  /* color: #374470; */
+}
+
+.category-bar .active{
+  background-color: #374470;
+}
+
+.category-bar-item{
+  display:inline-block;
+  width: 47px;
+  height: 6px;
+  background-color: #8A8A8A;
+}
+
+.category-nr{
+  font-weight: 300;
+  font-size: 24px;
+  padding-bottom: 10%;
+}
+
+.question-nr{
+  font-size: 22px;
+}

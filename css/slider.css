@@ -1,0 +1,41 @@
+/* _______SLIDER__________ */
+.form-item-box{
+  margin-bottom: 0px;
+}
+
+.slider-question{
+  font-size: 20px;
+  font-weight: 800;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 15px;
+  margin-bottom: 7px;
+}
+
+.slider-value{
+  font-size: 20px;
+}
+
+:root{
+  --mainSliderColor: rgb(55, 68, 112);
+  --wheelSliderColor: white;
+}
+
+.slider{
+  -webkit-appearance:none;
+  width: 250px;
+  height: 16px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: var(--mainSliderColor);
+}
+
+.slider::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  width: 30px;
+  height: 30px;
+  background-color: var(--wheelSliderColor);
+  border: 3px solid var(--mainSliderColor);
+  border-radius: 50%;
+}
