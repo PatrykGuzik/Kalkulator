@@ -5,11 +5,16 @@
 .radio{
   margin: auto;
   width: 350px;
-  height: 100px;
   text-align: left;
   padding-left: 20px;
   padding-bottom: 30px;
   /* border: 1px solid black; */
+}
+
+.radio-error{
+  color: red;
+  font-weight: bolder;
+  transition: opacity 0.4s;
 }
 
 .radio-inner{
