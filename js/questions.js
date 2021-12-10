@@ -6,6 +6,4 @@ let list_questoins =/* 1  */ ["1 Lorem ipsum dolor sit amet, consectetur adipisi
                     /* 5  */  "5 Lorem ipsum dolor sit amet, consectetur adipisicing ",
                     /* 6  */  "6 Lorem ipsum dolor sit amet, consectetur adipisicing ",
                     /* 7  */  "7 Lorem ipsum dolor sit amet, consectetur adipisicing ",
-                    /* 8  */  "8 Lorem ipsum dolor sit amet, consectetur adipisicing ",
-                    /* 9 */   "9 Lorem ipsum dolor sit amet, consectetur adipisicing ",
-                    /* 10 */  "10 Lorem ipsum dolor sit amet, consectetur adipisicing ",]
+                    /* 8  */  "8 Lorem ipsum dolor sit amet, consectetur adipisicing "]

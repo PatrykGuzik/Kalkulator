@@ -61,12 +61,12 @@ function rightClick() {
     // TODO: Przenieść to do osobnej funkcji
     let fr = '';
     let sr = '';
-    for (var i = 1; i < list_questoins.length+1; i++) {
+    for (var i = 1; i < list_questoins.length; i++) {
       fr += '<td>'+i+'</td>';
       sr += '<td>'+answersJSON[i] +'</td>';
     }
 
-    document.body.innerHTML = '<table><tr>' + fr+ '</tr><tr>' + sr + '</tr></table>';
+    document.body.innerHTML = '<table><tr> <td>nr pytania</td>' + fr+ '</tr><tr> <td>odpowiedź</td>' + sr + '</tr></table>';
     console.log(answersJSON);
   }
 }
