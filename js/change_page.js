@@ -14,7 +14,7 @@ function getPageQuestions(page) {
 let is_full = function(page){
   full = true;
   getPageQuestions(page).forEach((item, i) => {
-     if(answersJSON[item] == null){
+     if((answersJSON[item] == null)||(answersJSON[item] < 0)){
        full = false;
      }
   });
@@ -42,6 +42,7 @@ function leftClick() {
     }else{
       page--;
       changePage();
+      console.log(answersJSON);
     }
   }
 }
@@ -61,7 +62,7 @@ function rightClick() {
     // TODO: Przenieść to do osobnej funkcji
     let fr = '';
     let sr = '';
-    for (var i = 1; i < list_questoins.length; i++) {
+    for (var i = 0; i < list_questoins.length; i++) {
       fr += '<td>'+i+'</td>';
       sr += '<td>'+answersJSON[i] +'</td>';
     }

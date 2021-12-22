@@ -37,39 +37,51 @@ function FormItem(nr, question) {
     function myFunction() {
       // zapis do JSONa
       answersJSON[nr] = Number(slider.value);
+      // pozmieniać toto
+      asd['q'+(nr+1)] = Number(slider.value);
       info_value.innerHTML = name_values[slider.value-1];
-      console.log(answersJSON);
+      console.log(asd);
     };
   }
 
   this.drawInputNumber= function(input_number_box) {
     // twożymy pojemnik na pytanie, wartość i slider
     let inputNumberBox = document.querySelector(input_number_box);
-    inputNumberBox.innerHTML = '<div class="slider-question">'+this.question+'</div><input class="input-number form-item" id="s'+this.nr+'"  type="number" placeholder="km">';
+    inputNumberBox.innerHTML = '<div class="slider-question">'+this.question+'</div><input class="input-number form-item" id="s'+this.nr+'"  type="text"   placeholder="km"> <div style="opacity:0;" id="error'+this.nr+'" class="number-error"> Wpisz liczbę większą lub równą 0 </div>';
 
     // zaczepiamy się o zawartość pojemnika
     let inputNumber = document.querySelector('#s'+this.nr+'');
-
+    let errorNumber = document.querySelector('#error'+this.nr+'');
+    const borderColor = inputNumber.style.borderColor;
 
 
     // jeżeli ktoś wcześniej zaznaczył odpowiedź to ją przywracamy
     if(answersJSON[nr]){
       this.value = answersJSON[nr];
       inputNumber.value = answersJSON[nr];
-    }else{
-      // a jeśli nie to ustawiamy null
-      answersJSON[nr] = null;
     }
 
-    // jeżeli ktoś zmieniwartość na sliderze aktualizujemy dane i zmieniamy wyświetlaną wartość
+
+    // jeżeli ktoś zmieni wartość w inpucie aktualizujemy dane i zmieniamy wyświetlaną wartość
     inputNumber.addEventListener("input", myFunction);
     function myFunction() {
-      answersJSON[nr] = Number(inputNumber.value);
+      if((!isNaN(inputNumber.value)) && !(inputNumber.value < 0)){
+        answersJSON[nr] = inputNumber.value;
+        inputNumber.style.borderColor = borderColor;
+        errorNumber.style.opacity= "0";
+      }else{
+        answersJSON[nr] = null;
+        inputNumber.style.borderColor = "red";
+        errorNumber.style.opacity= "1";
+      }
 
       // jeżeli ktoś coś wpisze i to skasuje to ustawiamy null
-      if (answersJSON[nr] == "") {
+      if (answersJSON[nr] == '') {
         answersJSON[nr] = null;
+        // inputNumber.style.borderColor = "red";
+        // errorNumber.style.opacity= "1";
       }
+      console.log(answersJSON[nr]);
     };
   }
 

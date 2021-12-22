@@ -4,31 +4,31 @@
 //Page(nr1, nr2, type_input, cat_name, question_nr, info=false, radio_checkbox_questions=false)
 const cat_test = "ENERGIA DOMU";
 
-let p1 = new Page(0,3,
-  "Slider",
+let p1 = new Page(0,1,
+  "Number",
   "TRANSPORT",
   "Pytanie 1",
   ["tytuł","Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "],
   );
 
 let p2 = new Page(3,4,
-  "Radio",
+  "Checkbox",
   "ENERGIA DOMU",
   "Pytanie 2",
   false,
-  ["lorem ipsum 1","lorem ipsum 2","lorem ipsum 3","lorem ipsum 4","lorem ipsum 3","lorem ipsum 4"]
+  ["lorem ipsum 1","lorem ipsum 2","lorem ipsum 3","lorem ipsum 4","lorem ipsum 5"]
   );
 
 let p3 = new Page(4,5,
-  "Checkbox",
+  "Radio",
   "ODPADY",
   "Pytanie 3",
   ["tytuł","Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "],
-  ["lorem ipsum 1","lorem ipsum 2","lorem ipsum 3","lorem ipsum 4","lorem ipsum 3","lorem ipsum 4"]
+  ["lorem ipsum 1","lorem ipsum 2","lorem ipsum 3","lorem ipsum 4"]
   );
 
 let p4 = new Page(5,6,
-  "Number",
+  "Slider",
   "JEDZENIE",
   "Pytanie 4",
   ["tytuł","Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "],

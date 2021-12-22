@@ -192,10 +192,12 @@ function Page(nr1, nr2, type_input, cat_name, question_nr, info=false, radio_che
 
   this.errorAnswer = function() {
     for (var i = nr1; i < nr2; i++) {
-      if(answersJSON[i] == null){
+      if((answersJSON[i] == null)||(answersJSON[i] < 0)){
         if(type_input=="Number"){
           let form_item = document.querySelector('#s'+i+'');
+          let errorNumber = document.querySelector('#error'+i+'');
           form_item.style.borderColor = "red";
+          errorNumber.style.opacity= "1";
         } else if (type_input=="Radio") {
           let radio_error = document.querySelector('.radio-error');
           radio_error.style.opacity= "1";
