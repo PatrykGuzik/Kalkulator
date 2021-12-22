@@ -11,7 +11,7 @@ let p1 = new Page(0,1,
   ["tytuł","Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "],
   );
 
-let p2 = new Page(3,4,
+let p2 = new Page(1,2,
   "Checkbox",
   "ENERGIA DOMU",
   "Pytanie 2",
@@ -19,7 +19,7 @@ let p2 = new Page(3,4,
   ["lorem ipsum 1","lorem ipsum 2","lorem ipsum 3","lorem ipsum 4","lorem ipsum 5"]
   );
 
-let p3 = new Page(4,5,
+let p3 = new Page(3,4,
   "Radio",
   "ODPADY",
   "Pytanie 3",
@@ -27,7 +27,7 @@ let p3 = new Page(4,5,
   ["lorem ipsum 1","lorem ipsum 2","lorem ipsum 3","lorem ipsum 4"]
   );
 
-let p4 = new Page(5,6,
+let p4 = new Page(4,6,
   "Slider",
   "JEDZENIE",
   "Pytanie 4",
